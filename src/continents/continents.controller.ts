@@ -9,8 +9,22 @@ export class ContinentsController{
     constructor(private readonly continentsService: ContinentsService){}
 
     @Get(':id')
-    async getContinent(@Param(':id') id: string): Promise<Continents>{
+    async getContinent(@Param('id') id: string): Promise<Continents>{
+        // console.log('id', id)
         return this.continentsService.getContinentById(id);
+    }
+
+    @Get('code/:code')
+    async getByCode(@Param('code') code: string): Promise<Continents>{
+        console.log('code', code)
+        return this.continentsService.getByCode(code)
+    }
+
+
+    @Get('name/:name')
+    async getByName(@Param('name') name: string): Promise<Continents>{
+        console.log('code', name)
+        return this.continentsService.getByName(name)
     }
 
     @Get()

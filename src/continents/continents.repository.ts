@@ -25,4 +25,7 @@ export class ContinentsRepository {
     async findOneAndUpdate(continentFilterQuery: FilterQuery<Continents>, continent: Partial<Continents>): Promise<Continents>{
         return this.continentsModel.findOneAndUpdate(continentFilterQuery, continent)
     }
+    async findLanguage(continentFilterQuery: FilterQuery<Continents>, continent: Partial<Continents>): Promise<Continents>{
+        return this.continentsModel.findOneAndUpdate(continentFilterQuery, continent)
+    }
 }
